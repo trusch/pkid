@@ -4,7 +4,6 @@ pkid
 A service for managing public key infrastructures via a REST-full interface.
 
 # Features
-* Create self-signed CA's
 * Manage multiple root CA's
 * Create signed sub-CA's
 * Create signed server certificates
@@ -12,6 +11,10 @@ A service for managing public key infrastructures via a REST-full interface.
 * RSA or ECC Keys
 * Revoke Sub-CA's, clients or servers
 * Automatically create CRL's
+* Choosable storage layers
+  * leveldb
+  * raw filesystem
+  * more comming soon...
 
 # API
 
