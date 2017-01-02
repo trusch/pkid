@@ -15,6 +15,8 @@ A service for managing public key infrastructures via a REST-full interface.
   * leveldb
   * raw filesystem
   * more comming soon...
+* can be build completely static -> no deps to openssl etc.
+* should run on Linux, Mac and Windows
 
 # Installation
 ```bash
