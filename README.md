@@ -16,6 +16,12 @@ A service for managing public key infrastructures via a REST-full interface.
   * raw filesystem
   * more comming soon...
 
+# Installation
+```bash
+> go get github.com/trusch/pkid
+> pkid --storage leveldb:///usr/share/pkid --listen 0.0.0.0:80
+```
+
 # API
 
 ## Create Certificates
