@@ -22,7 +22,9 @@ These endpoints are used to create keys and issue certificates.
 Options for all following endpoints are:
 * `name`: string (required)
 * `curve`: string (optional, default: P521)
+  * valid values: P521, P384, P256, P224
 * `rsaBits`: int (optional)
+  * valid values: 4096, 2048, 1024
 * `notBefore`: int (optional, secs since epoche, defaults to current time)
 * `validFor`: string (optional, example: 12h30m, defaults to 8760h (-> 1 Year))
 
