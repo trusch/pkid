@@ -13,7 +13,7 @@ var storagePath = flag.String("storage", "leveldb:///usr/share/pkid/datastore", 
 var listenAddr = flag.String("listen", ":80", "listen address")
 
 func main() {
-	store, err := storage.NewMetaStorage(*storagePath)
+	store, err := storage.New(*storagePath)
 	if err != nil {
 		log.Fatal(err)
 	}

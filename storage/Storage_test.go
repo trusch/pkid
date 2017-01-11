@@ -21,8 +21,8 @@ type StorageSuite struct {
 	store Storage
 }
 
-func (suite *StorageSuite) TearDownTest() {
-	os.RemoveAll("./test-store")
+func (suite *StorageSuite) TearDownSuite() {
+	os.RemoveAll("./test-store.db")
 }
 
 func (suite *StorageSuite) TestSaveLoadCA() {
@@ -86,20 +86,20 @@ func (suite *StorageSuite) TestSaveLoadServer() {
 	suite.Equal(entity.Key, restoredEntity.Key)
 }
 
-func TestFSStorage(t *testing.T) {
-	store, err := NewMetaStorage("file://test-store")
-	assert.NoError(t, err)
-	assert.NotNil(t, store)
-	s := new(StorageSuite)
-	s.store = store
-	suite.Run(t, s)
-}
-
-// func TestLevelDBStorage(t *testing.T) {
-// 	store, err := NewMetaStorage("leveldb://test-store")
+// func TestStorageImplWithLevelDB(t *testing.T) {
+// 	store, err := New("leveldb://test-store.db")
 // 	assert.NoError(t, err)
 // 	assert.NotNil(t, store)
 // 	s := new(StorageSuite)
 // 	s.store = store
 // 	suite.Run(t, s)
 // }
+
+func TestStorageImplWithFile(t *testing.T) {
+	store, err := New("file://test-store.db")
+	assert.NoError(t, err)
+	assert.NotNil(t, store)
+	s := new(StorageSuite)
+	s.store = store
+	suite.Run(t, s)
+}
