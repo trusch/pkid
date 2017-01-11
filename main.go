@@ -15,7 +15,7 @@ var token = flag.String("token", "", "bearer authorization token for secure stor
 
 func main() {
 	flag.Parse()
-	store, err := storage.New(*storagePath)
+	store, err := storage.New(*storagePath, *token)
 	if err != nil {
 		log.Fatal(err)
 	}
