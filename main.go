@@ -11,8 +11,10 @@ import (
 
 var storagePath = flag.String("storage", "leveldb:///usr/share/pkid/datastore", "storage backend uri")
 var listenAddr = flag.String("listen", ":80", "listen address")
+var token = flag.String("token", "", "bearer authorization token for secure storaged backend")
 
 func main() {
+	flag.Parse()
 	store, err := storage.New(*storagePath)
 	if err != nil {
 		log.Fatal(err)
